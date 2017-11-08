@@ -1,0 +1,57 @@
+baseURL:         "http://projetosagui.com.br"
+languageCode:    "pt-br"
+title:           "Projeto Sagui"
+disableKinds:    ["taxonomy", "taxonomyTerm", "RSS"]
+enableRobotsTXT: true
+googleAnalytics: ""
+metaDataFormat:  "yaml"
+enableMissingTranslationPlaceholders: true
+defaultContentLanguage: pt
+disableFastRender: true
+ignoreFiles: [ "\\.tmp$", "\\.tmp\\-browserify" ]
+stepAnalysis: true
+templateMetrics: true
+pluralizeListTitles: false
+menu:
+  main:
+      - Name: "Home"
+        Pre: ""
+        Weight: 1
+        Identifier: "home"
+        URL: "#home"
+
+      - Name: "O Projeto"
+        Pre: ""
+        Weight: 2
+        Identifier: "projeto"
+        URL: "#projeto"
+
+      - Name: "Sobre"
+        Pre: ""
+        Weight: 3
+        Identifier: "sobre"
+        URL: "#sobre"
+
+      - Name: "Contato"
+        Pre: ""
+        Weight: 4
+        Identifier: "contato"
+        URL: "#contato"
+
+
+params:
+  Subtitle:      "Seja Ouvido"
+  AuthorName:    "AppCívico"
+  GitHubUser:    "AppCivico"
+
+  achievement:
+    fgvDireito:
+      name: "FVG Direito SP"
+      link: "https://direitosp.fgv.br"
+      logo: "logo-fgv-direito.png"
+
+  developed:
+    appcivico:
+      name: "AppCívico"
+      link: "https://appcivico.com"
+      logo: "logo-appcivico.png"
