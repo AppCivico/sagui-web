@@ -1,0 +1,56 @@
+{
+  "name": "front-end_boilerplate",
+  "version": "0.1.0",
+  "description": "Initial set of files, directories and guidelines for Front-end development",
+  "main": "index.html",
+  "scripts": {
+    "autoprefixer": "postcss --use autoprefixer cssnano --safe -r static/dist/css/**/*.css",
+    "nano": "postcss --use cssnano --safe -r static/dist/css/**/*.css",
+    "icons": "svgo -f _source/images/**/*.svg -o static/dist/img",
+    "compress:img": "imagemin _source/images/**/*.{gif,jpg,png} --out-dir=static/dist/img",
+    "scss": "node-sass _source/stylesheets --output-style compressed --output static/dist/css --source-map true",
+    "uglify": "uglifyjs static/dist/js/index.js -c -r -o static/dist/js/index.js",
+    "build:sass": "npm run scss && npm run autoprefixer && npm run nano",
+    "build:img": "npm run compress:img && npm run icons",
+    "build:dev": "npm run build:sass && npm run build:img",
+    "build:prod": "npm run build:sass && npm run build:img && npm run hashmark",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npm run lint:sass",
+    "lint:sass": "sass-lint '_source/stylesheets/**/*.scss' -v -q",
+    "pretest": "npm run lint",
+    "watch:sass": "onchange '_source/stylesheets/**/*.scss' -- npm run build:sass",
+    "watch:all": "npm run serve & npm run watch:sass",
+    "hashmark": "hashmark -l 8 dist/**/*.{js,css,map} {dir}/{name}-{hash}{ext} --cwd static --asset-map ../data/assets.json",
+    "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://sobral@bitbucket.org/eokoe_it/front_end_boiler_plate.git"
+  },
+  "keywords": [
+    "html",
+    "hugo",
+    "npm",
+    "sass"
+  ],
+  "author": "Evelyn Perez, Lais Tomaz & Fernanda Joris",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/eokoe_it/front_end_boiler_plate#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "changelog-verify": "^1.0.4",
+    "cssnano": "^3.10.0",
+    "hashmark": "^5.0.0",
+    "imagemin-cli": "^3.0.0",
+    "include-media": "^1.4.9",
+    "modularscale-sass": "^3.0.3",
+    "node-sass": "^4.6.0",
+    "onchange": "^3.2.1",
+    "postcss-cli": "^4.1.1",
+    "sass-lint": "^1.12.1",
+    "susy": "^3.0.1",
+    "svgo": "^1.0.2",
+    "uglify-js": "^3.1.8",
+    "version-changelog": "^2.1.0"
+  }
+}
