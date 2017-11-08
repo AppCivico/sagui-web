@@ -1,0 +1,39 @@
+	<footer class="site-footer">
+		<div role="contentinfo">
+
+			{{ with .Site.Params.achievement }}
+				<div class="contentinfo__achievement">
+					<p>{{ i18n "achievement" | title }}
+						<a href="http://direitosp.fgv.br" target="_blank">FGV DIREITO SP</a>
+					</p>
+				</div>
+
+			{{ end }}
+
+
+			{{ with .Site.Params.developed }}
+				<div class="contentinfo__developed">
+					<p>{{ i18n "developed" | title }}
+						<a href="https://appcivico.com" target="_blank">AppCívico</a>
+					</p>
+				</div>
+
+			{{ end }}
+
+				<div class="contentinfo__sagui">
+					<a href="{{ .Site.BaseURL }}" target="_blank">Projeto Sagui</a>
+				</div>
+
+		</div>
+
+
+		<nav class="footer-menu">
+			{{ partialCached "menu.html" . }}
+		</nav>
+
+	</footer>
+	{{ partialCached "browserUpdate.html" . }}
+</div><!-- .main-container -->
+
+</body>
+</html>
