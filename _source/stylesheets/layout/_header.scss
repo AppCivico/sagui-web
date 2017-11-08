@@ -9,4 +9,25 @@
  * Within any `document` or `application`, the author **SHOULD** mark no more than one element with the `banner` role.
  */
 [role='banner'] {
+	max-width: span(5);
+
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+
+
+[role='banner'] > a {
+	@include image-replacement;
+
+	display: block;
+
+	height: span(1);
+
+	margin-right: auto;
+	margin-left: auto;
+
+	background-image: image('logo.png');
+	background-position: center;
 }
