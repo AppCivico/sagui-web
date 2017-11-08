@@ -1,7 +1,7 @@
 {
-  "name": "front-end_boilerplate",
+  "name": "sagui-web",
   "version": "0.1.0",
-  "description": "Initial set of files, directories and guidelines for Front-end development",
+  "description": "Site Sagui developed by AppCivico",
   "main": "index.html",
   "scripts": {
     "autoprefixer": "postcss --use autoprefixer cssnano --safe -r static/dist/css/**/*.css",
@@ -19,7 +19,7 @@
     "lint:sass": "sass-lint '_source/stylesheets/**/*.scss' -v -q",
     "pretest": "npm run lint",
     "watch:sass": "onchange '_source/stylesheets/**/*.scss' -- npm run build:sass",
-    "watch:all": "npm run serve & npm run watch:sass",
+    "watch": "npm run watch:sass",
     "hashmark": "hashmark -l 8 dist/**/*.{js,css,map} {dir}/{name}-{hash}{ext} --cwd static --asset-map ../data/assets.json",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
