@@ -12,7 +12,7 @@ Site do Projeto Sagui. Desenvolvido pela AppCívico, tem como objetivo construir
 
 Prepare files: `npm run build:dev` or `yarn run build:dev`.
 
-To turn grid on, before to serve the website, set `NODE_ENV=dev`
+To turn grid on, before to serve the website, set `NODE_ENV=development`
 
 Serve with live reload at `localhost:1313`: `hugo server --noHTTPCache=true --ignoreCache --templateMetricsHints`
 
