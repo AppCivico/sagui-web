@@ -1,0 +1,23 @@
+##header
+
+- id: content
+  translation: "Conteúdo"
+- id: menu
+  translation: "Menu"
+- id: scrolling
+  translation: "Rolagem"
+
+##footer
+
+- id: achievement
+  translation: "realização"
+- id: developed
+  translation: "Desenvolvimento"
+
+
+##404
+
+- id: notFound
+  translation: "Página não encontrada"
+- id: returnToHome
+  translation: "Retornar para Home"
