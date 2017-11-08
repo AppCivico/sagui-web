@@ -1,0 +1,57 @@
+{{ partial "header.html" . }}
+
+	<main role="main" id="conteudo">
+		<article class="home">
+
+			<h1>{{ .Title }}</h1>
+			{{ .Content }}
+
+		</article>
+
+		{{ range where .Site.Pages ".File.TranslationBaseName" "projeto" }}
+
+			<article class="project">
+
+				<h2>{{ .Title }}</h2>
+				{{ .Content }}
+
+			</article>
+
+		{{ end }}
+
+		{{ range where .Site.Pages ".File.TranslationBaseName" "video" }}
+
+			<article class="video">
+
+				<h2>{{ .Title }}</h2>
+				{{ .Content }}
+
+			</article>
+
+		{{ end }}
+
+		{{ range where .Site.Pages ".File.TranslationBaseName" "sobre" }}
+
+			<article class="about">
+
+				<h2>{{ .Title }}</h2>
+				{{ .Content }}
+
+			</article>
+
+		{{ end }}
+
+		{{ range where .Site.Pages ".File.TranslationBaseName" "contato" }}
+
+			<article class="contact">
+
+				<h2>{{ .Title }}</h2>
+				{{ .Content }}
+
+			</article>
+
+		{{ end }}
+
+	</main>
+
+{{ partial "footer.html" . }}
