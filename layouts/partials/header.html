@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="{{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}" class="{{ if .IsHome }}home {{ end }}{{ $.Scratch.Get "rootClass" }} {{ .Params.rootClass }} {{ if eq (getenv "NODE_ENV") "development" }}grid{{ end }} no-js">
+<head>
+
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+	<meta charset="utf-8">
+	<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+	<meta content="width=device-width,initial-scale=1.0" name="viewport">
+
+	<link rel="stylesheet" href="/dist/css/index.css" media="all">
+	{{ if eq (getenv "NODE_ENV") "development" }}
+	<link rel="stylesheet" href="/dist/css/qa.css" media="all">
+	{{ end }}
+
+	<title>{{ if not .IsHome }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
+
+	{{ with .Site.Params.SiteDescription }}<meta name="description" content="{{ . }}">{{ end }}
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+	{{ if eq (getenv "NODE_ENV") "production" }}
+		{{ template "_internal/google_analytics.html" . }}
+	{{ end }}
+
+</head>
+<body>
+	<input type="checkbox" id="menu-controller" class="menu-controller" hidden>
+	<div class="main-container">
+		<nav class="skip-links">
+			<ul>
+				<li class="to-content"><a href="#conteudo">{{ i18n "content" | lower }}</a></li>
+				<li class="to-menu"><a href="#menu">{{ i18n "menu" | lower }}</a></li>
+			</ul>
+		</nav>
+		<header class="site-header">
+			<label for="menu-controller" onclick>{{ i18n "menu" | lower }}</label>
+
+			<div role="banner">
+				<a href="/">
+					{{ .Site.Title }}
+				</a>
+			</div>
+			<nav class="main-menu" id="menu">
+				{{ partialCached "menu.html" . }}
+			</nav>
+		</header>
