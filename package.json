@@ -6,7 +6,7 @@
   "scripts": {
     "autoprefixer": "postcss --use autoprefixer cssnano --safe -r static/dist/css/**/*.css",
     "nano": "postcss --use cssnano --safe -r static/dist/css/**/*.css",
-    "icons": "svgo -f _source/images/**/*.svg -o static/dist/img",
+    "icons": "imagemin _source/images/**/*.svg --out-dir=static/dist/img",
     "compress:img": "imagemin _source/images/**/*.{gif,jpg,png} --out-dir=static/dist/img",
     "scss": "node-sass _source/stylesheets --output-style compressed --output static/dist/css --source-map true",
     "uglify": "uglifyjs static/dist/js/index.js -c -r -o static/dist/js/index.js",
