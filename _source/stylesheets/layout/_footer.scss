@@ -2,3 +2,25 @@
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
 
+.site-footer {
+	padding: (gutter(1) / 1em * 1rem) 0;
+
+	color: palette('gray', 'light');
+
+	background-color: palette('gray', 'x-light');
+
+}
+
+
+
+
+
+
+
+
+
+
+.footer-menu {
+	color: palette('gray', 'dark');
+
+}
