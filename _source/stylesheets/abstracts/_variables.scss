@@ -100,6 +100,10 @@ $palette: (
 	'off-white': rgb(254, 254, 254),
 	'black': rgb(0, 0, 0),
 	'debug': rgb(255, 0, 0),
+	'shadow': (
+		'inverse': rgba(255, 255, 255, 0.25),
+		'base': rgba(0, 0, 0, 0.2),
+	),
 	'anchor': (
 		'base': rgb(255, 197, 40),
 		'link': rgb(255, 197, 40),
