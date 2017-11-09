@@ -34,7 +34,7 @@ $text-font-stack: Raleway, $basic-title-font-stack !default;
 ///
 /// @example scss
 /// $code-font-stack: ComicSans, $basic-code-font-stack;
-$code-font-stack: Raleway, $basic-title-font-stack !default;;
+$code-font-stack: Raleway, $basic-title-font-stack !default;
 
 
 /// Body text font-size
@@ -73,8 +73,8 @@ $line-lengths: (
 
 /// @link http://www.modularscale.com/?1.125&em&1.125
 $modularscale: (
-  base: 1.125em,
-  ratio: 1.125
+	base: 1.125em,
+	ratio: 1.125
 );
 
 
@@ -200,7 +200,7 @@ $susy: (
 
 /// Container's maximum width
 /// @type number
-$max-width: 1180px !default;
+$max-width: span(12 'wider') !default;
 
 
 /// border default width
