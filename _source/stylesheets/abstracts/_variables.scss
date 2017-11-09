@@ -12,7 +12,7 @@
 ///
 /// @example scss
 /// $title-font-stack: ComicSans, $basic-title-font-stack;
-$title-font-stack: $basic-title-font-stack !default;
+$title-font-stack: Raleway, $basic-title-font-stack !default;
 
 
 /// Text body font stack
@@ -23,7 +23,7 @@ $title-font-stack: $basic-title-font-stack !default;
 ///
 /// @example scss
 /// $text-font-stack: ComicSans, $native-font-stack;
-$text-font-stack: $native-font-stack !default;
+$text-font-stack: Raleway, $basic-title-font-stack !default;
 
 
 /// Code (monospace) font stack
@@ -34,14 +34,14 @@ $text-font-stack: $native-font-stack !default;
 ///
 /// @example scss
 /// $code-font-stack: ComicSans, $basic-code-font-stack;
-$code-font-stack: $basic-code-font-stack !default;
+$code-font-stack: Raleway, $basic-title-font-stack !default;;
 
 
 /// Body text font-size
 ///
 /// @access public
 /// @type number
-$body-font-size: 1em !default;
+$body-font-size: 1.125em !default;
 
 /// Default Leading
 ///
@@ -69,6 +69,14 @@ $line-lengths: (
 	'min': 21em,
 	'max': 35em,
 ) !default;
+
+
+/// @link http://www.modularscale.com/?1.125&em&1.125
+$modularscale: (
+  base: 1.125em,
+  ratio: 1.125
+);
+
 
 /// List all available colors and tones.
 ///
