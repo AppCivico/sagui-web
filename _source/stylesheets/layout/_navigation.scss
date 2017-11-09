@@ -41,6 +41,60 @@ nav a {
 }
 
 
+.main-menu {
+	@include media('<desktop') {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+
+		width: 0;
+
+		margin: 0;
+
+		overflow: hidden;
+
+		white-space: nowrap;
+		transition: width 0.5s;
+
+		.menu-controller:checked + * & {
+			width: $off-canvas-menu-width;
+
+			overflow-y: auto;
+
+			box-shadow: inset -7px 1px 20px palette('shadow');
+
+			transition: width 0.5s;
+		}
+
+	}
+
+	@include media ('>=desktop') {
+		position: relative;
+		top: $line-height * 1em;
+
+		z-index: layer('default');
+
+		margin-left: 50%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* access
 ---------------------------------------------------------------------------- */
 .skip-links {
