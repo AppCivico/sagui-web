@@ -1,3 +1,121 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
+.home article {
+
+}
+
+.content-container {
+	padding-top: $line-height * 4rem;
+	padding-right: gutter();
+	padding-bottom: $line-height * 4rem;
+	padding-left: gutter();
+
+	@include media('>=6col') {
+		max-width: 50%;
+
+		margin-left: 0;
+	}
+}
+
+h1 ~ *,
+h2 ~ * {
+	@include media('>=6col') {
+		margin-left: span(0.5 'wide');
+	}
+}
+
+h1,
+h2 {
+	~ * {
+		@include media('>=6col') {
+			margin-left: span(0.5 'wide');
+		}
+	}
+
+	&::after {
+		display: block;
+
+		width: span(1) / 1em * 1rem;
+		height: 9px;    //sass-lint:disable-line property-units
+
+		margin-top: $line-height * 1rem;
+		margin-bottom: $line-height * 1rem;
+		margin-left: span(0.5 'wide') / 1em * 1rem;
+		background-color: palette('yellow', 'base');
+
+		content: '';
+	}
+}
+
+
+
+
+.greeting {
+	color: palette('white');
+
+	background-image: image('greeting-girl.png');
+	background-color: palette('black');
+}
+
+.content-greeting {
+	margin-right: auto;
+}
+
+.project {
+	color: palette('gray', 'base');
+
+	background-image: image('project-trees.png');
+	background-color: palette('white');
+}
+
+.project .content-container {
+	margin-right: 0;
+	margin-left: auto;
+
+	background-color: palette('white');
+}
+
+.solution {
+	color: palette('white');
+
+	background-color: palette('black');
+}
+
+
+.about {
+	color: palette('gray', 'base');
+
+	background-image: image('about-sagui.png');
+	background-color: palette('yellow', 'base');
+}
+
+
+
+.about h2 {
+
+	&::after {
+		background-color: palette('white');
+
+
+	}
+}
+
+.about .content-container {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.contact {
+	color: palette('gray', 'base');
+
+	background-image: image('logo.png');
+	background-color: palette('white');
+}
+
+.contact .content-container {
+	max-width: 70%;
+
+	margin-right: auto;
+	margin-left: auto;
+}
