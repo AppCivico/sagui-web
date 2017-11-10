@@ -43,9 +43,6 @@
 	@include media('>=6col') {
 		@include table-layout-item;
 	}
-	@include media('>=10col', '<#{$max-width - gutter()}') {
-		padding: gutter() / 2;
-	}
 
 }
 
