@@ -43,7 +43,7 @@ nav a {
 
 .main-menu {
 	@include media('<desktop') {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		bottom: 0;
 		left: 0;
@@ -55,6 +55,7 @@ nav a {
 		overflow: hidden;
 
 		white-space: nowrap;
+
 		transition: width 0.5s;
 
 		.menu-controller:checked + * & {
@@ -66,9 +67,7 @@ nav a {
 
 			transition: width 0.5s;
 		}
-
 	}
-
 	@include media ('>=desktop') {
 		position: relative;
 		top: $line-height * 1em;
@@ -83,15 +82,48 @@ nav a {
 
 
 
+.footer-menu {
+	width: 100%;
+	margin-top: $line-height * 1rem;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	text-transform: lowercase;
+
+	@include media('>=6col') {
+		max-width: span(10);
+		padding: gutter() gutter() / 2;
+		}
+}
+
+.footer-menu ul {
+	@include table-layout-wrapper;
 
 
+	@include media('>=6col') {
+
+		width: 40%;
+		margin-right: 0;
+		margin-left: auto;
+
+		text-align: right;
+
+	}
+}
 
 
+.footer-menu li {
+	@include table-layout-item;
+}
 
+.footer-menu a {
+	@include link-undercover;
 
-
-
-
+	@include media ('<desktop') {
+		padding-top: gutter() / 2;
+		padding-bottom: gutter() / 2;
+	}
+}
 
 
 
