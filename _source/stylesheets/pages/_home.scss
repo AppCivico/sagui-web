@@ -54,9 +54,38 @@ h2 {
 .greeting {
 	color: palette('white');
 
-	background-image: image('greeting-girl.png');
+	background-image: image('girl-320w.png');
+	background-size: cover;
 	background-color: palette('black');
+
+	@include media('>=480px') {
+		background-image: image('girl-480w.png');
+	}
+
+	@include media('>=768px') {
+		background-image: image('girl-768w.png');
+	}
+
+	@include media('>=1024px') {
+		background-image: image('girl-1024w.png');
+	}
+
+	@include media('>=1280px') {
+		background-image: image('girl-1280w.png');
+	}
+
+	@include media('>=1600px') {
+		background-image: image('girl-1600w.png');
+	}
+
+	@include media('>=1900px') {
+		background-image: image('girl-1900w.png');
+	}
+
 }
+
+
+
 
 .content-greeting {
 	margin-right: auto;
@@ -79,8 +108,35 @@ h2 {
 .solution {
 	color: palette('white');
 
-	background-image: image('solution.png');
+	background-image: image('solution-320w.png');
+	background-size: cover;
+
 	background-color: palette('black');
+
+	@include media('>=480px') {
+		background-image: image('solution-480w.png');
+	}
+
+	@include media('>=768px') {
+		background-image: image('solution-768w.png');
+	}
+
+	@include media('>=1024px') {
+		background-image: image('solution-1024w.png');
+	}
+
+	@include media('>=1280px') {
+		background-image: image('solution-1280w.png');
+	}
+
+	@include media('>=1600px') {
+		background-image: image('solution-1600w.png');
+	}
+
+	@include media('>=1900px') {
+		background-image: image('solution-1900w.png');
+	}
+
 }
 
 
