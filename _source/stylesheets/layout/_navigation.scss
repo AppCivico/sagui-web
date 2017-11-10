@@ -42,7 +42,11 @@ nav a {
 
 
 .main-menu {
-	@include media('<desktop') {
+	@include media('(<desktop') {
+		position: fixed;
+
+	}
+	@include media('>=desktop') {
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -69,7 +73,6 @@ nav a {
 		}
 	}
 	@include media ('>=desktop') {
-		position: relative;
 		top: $line-height * 1em;
 
 		z-index: layer('default');
@@ -130,7 +133,10 @@ nav a {
 /* access
 ---------------------------------------------------------------------------- */
 .skip-links {
+	position: absolute;
+
 }
+
 
 /* pagination
 ---------------------------------------------------------------------------- */
