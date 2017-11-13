@@ -11,11 +11,25 @@
 
 .main-container {
 	position: relative;
+
 	width: 100%;
 	max-width: $max-width;
-	margin-right: auto;
-	margin-left: auto;
-	box-shadow: 0 0 20px palette('shadow');
+
+	transition: margin-left 0.5s;
+
+	@include media('<9col') {
+		.menu-controller:checked + & {
+			margin-left: $off-canvas-menu-width;
+
+			transition: margin-left 0.5s;
+		}
+
+		.menu-controller:checked + & > * {
+			margin-right: $off-canvas-menu-width * -1;
+
+			transition: margin-right 0.5s;
+		}
+	}
 }
 
 [role='main'] {

@@ -2,6 +2,7 @@
 ---------------------------------------------------------------------------- */
 menu,
 nav {
+	text-transform: lowercase;
 }
 
 menu ul,
@@ -12,7 +13,7 @@ nav ol {
 	max-width: $max-width;
 
 	padding: 0;
-	margin: 0;
+	margin: 0 auto;
 
 	list-style: none;
 }
@@ -29,25 +30,30 @@ nav li {
 
 menu a,
 nav a {
+	@include link-undercover;
+
 	display: block;
 
-	&:link {
-		text-decoration: none;
+	padding: gutter() / 1em * 1rem;
+
+	@include on-event {
+		color: palette('yellow', 'base');
 	}
 }
+
+
 
 .current > a {
 	pointer-events: none;
 }
 
 
-.main-menu {
-	@include media('<desktop') {
-		position: fixed;
 
-	}
-	@include media('>=desktop') {
-		position: absolute;
+.main-menu {
+	z-index: layer('default');
+
+	@include media('<9col') {
+		position: fixed;
 		top: 0;
 		bottom: 0;
 		left: 0;
@@ -60,6 +66,8 @@ nav a {
 
 		white-space: nowrap;
 
+		background-color: palette('yellow', 'base');
+
 		transition: width 0.5s;
 
 		.menu-controller:checked + * & {
@@ -67,64 +75,161 @@ nav a {
 
 			overflow-y: auto;
 
-			box-shadow: inset -7px 1px 20px palette('shadow');
+			box-shadow: inset -7px 1px 50px palette('shadow');
 
 			transition: width 0.5s;
+
+			@include media('<9col') {
+				color: palette('black');
+			}
 		}
 	}
-	@include media ('>=desktop') {
-		top: $line-height * 1em;
+	@include media('>=9col') {
+		position: relative;
 
-		z-index: layer('default');
+		float: right;
 
-		margin-left: 50%;
+		max-width: span(10);
+
+		padding: gutter() gutter() / 2;
+		margin-top: $line-height * 3rem;
+		margin-right: $line-height * 1rem;
+		margin-left: auto;
+
+		color: palette('off-white');
 	}
 }
 
 
 
 
+.main-menu > ul > li {
+	float: left;
+
+	@include media('<9col') {
+		float: none;
+
+		display: block;
+
+		width: auto;
+
+		margin-right: 0;
+		margin-left: auto;
+	}
+}
+
+
+.main-menu ul {
+	@include table-layout-wrapper;
+}
+
+
+.main-menu li {
+	@include table-layout-item;
+}
+
+
+.main-menu a {
+	padding-top: gutter() / 2;
+	padding-bottom: gutter() / 2;
+}
+
+.main-menu a:hover {
+	@include media('<9col') {
+		color: palette('off-white');
+	}
+}
+
+/* menu controller
+---------------------------------------------------------------------------- */
+
+[for='menu-controller'] {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: none;
+
+	width: (span(2) / 1em * 1rem);
+
+	padding: (gutter() / 2) gutter();
+
+	font-size: 1em;
+
+	color: palette('yellow', 'base');
+
+	@include media('<=9col') {
+		display: block;
+		z-index: layer('dropdown');
+	}
+
+	&::before {
+		font-weight: bold;
+		font-size: 2em;
+		line-height: 0.75;
+		font-family: sans-serif;
+
+		vertical-align: middle;
+
+		content: '\20\2261\20';
+
+		.menu-controller:checked ~ * & {
+			content: '\20\d7\20';
+		}
+	}
+}
+
+
+
+
+/* footer menu
+---------------------------------------------------------------------------- */
+
 
 .footer-menu {
-	width: 100%;
 	margin-top: $line-height * 1rem;
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
-	text-transform: lowercase;
+
+	color: palette('gray', 'dark');
 
 	@include media('>=6col') {
 		max-width: span(10);
+
 		padding: gutter() gutter() / 2;
-		}
+	}
 }
 
 .footer-menu ul {
 	@include table-layout-wrapper;
 
+	white-space: nowrap;
 
 	@include media('>=6col') {
+		width: auto;
 
-		width: 40%;
 		margin-right: 0;
 		margin-left: auto;
-
-		text-align: right;
-
 	}
 }
 
 
 .footer-menu li {
-	@include table-layout-item;
+
+	@include media('>4col') {
+		@include table-layout-item;
+	}
 }
 
 .footer-menu a {
-	@include link-undercover;
-
-	@include media ('<desktop') {
+	// @include link-undercover;
+	@include media ('<9col') {
 		padding-top: gutter() / 2;
 		padding-bottom: gutter() / 2;
+	}
+	@include on-event {
+		color: palette('yellow', 'base');
 	}
 }
 
@@ -133,10 +238,22 @@ nav a {
 /* access
 ---------------------------------------------------------------------------- */
 .skip-links {
-	position: absolute;
+	@include table-layout-wrapper;
 
+	max-width: $max-width;
 }
 
+.skip-links ul {
+	display: table-row;
+}
+
+.skip-links li {
+	@include table-layout-item;
+}
+
+.skip-links a {
+	@include visually-hidden--focusable;
+}
 
 /* pagination
 ---------------------------------------------------------------------------- */
