@@ -47,7 +47,7 @@ details > summary {
 }
 
 h1 {
-	font-size: ms(5);
+	font-size: ms(4);
 
 	@include media('>=6col') {
 		font-size: ms(6);
@@ -84,7 +84,7 @@ h4 {
 
 h5 {
 	font-weight: normal;
-	font-size: ms(3);
+	font-size: ms(2);
 
 	@include media('>=11col') {
 		font-size: ms(5);
