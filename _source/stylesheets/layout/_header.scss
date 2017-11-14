@@ -27,6 +27,14 @@
 	margin-right: auto;
 	margin-left: auto;
 
-	background-image: image('logo.png');
+	background-image: image('logo-small.png');
 	background-position: center;
+
+	@include media('>=4col') {
+		background-image: image('logo-medium.png');
+	}
+
+	@include media('>=7col') {
+		background-image: image('logo.png');
+	}
 }
