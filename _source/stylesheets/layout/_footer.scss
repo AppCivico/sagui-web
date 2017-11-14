@@ -8,13 +8,13 @@
 	text-transform: lowercase;
 	color: palette('gray', 'light');
 
-
 	background-color: palette('gray', 'x-light');
 }
 
 
 .footer-menu a {
 	color: palette('gray', 'dark');
+
 }
 
 
@@ -22,7 +22,6 @@
 	width: 100%;
 	max-width: span(10);
 
-	padding: gutter() gutter() / 2;
 	margin: 0 auto;
 
 	@include media('>=6col') {
@@ -34,14 +33,15 @@
 
 
 [role='contentinfo'] > div {
-	padding-top: $line-height * 1rem;
-	padding-bottom: $line-height * 1rem;
+	padding: $line-height * 1rem;
+	text-align: center;
 
 	@include media('>=6col') {
-		padding-top: $line-height * 3rem;
-	}
-	@include media('>=6col') {
 		@include table-layout-item;
+		padding-top: $line-height * 1rem;
+		text-align: left;
+
+
 	}
 
 }
@@ -53,28 +53,58 @@
 	width: 100%;
 	height: 2em;
 	margin-top: $line-height * 0.5em;
+
+	background-position: center center;
+
+	@include media('>7col') {
+		background-position: left;
+	}
+
 }
 
 
 .contentinfo__achievement,
 .contentinfo__developed {
-	width: 30%;
+
+	@include media('>7col') {
+		width: 30%;
+	}
+
 
 }
 
 .contentinfo__developed a {
 	min-height: 41px;
-	background-image: url('/dist/img/logo-appcivico.png');
+	background-image: image('logo-appcivico-small.png');
+
+	@include media('>7col') {
+		background-image: image('logo-appcivico.png');
+	}
 }
 
 .contentinfo__achievement a {
 	min-height: 54px;
-	background-image: url('/dist/img/logo-fgv-direito.png');
+	background-image: image('logo-fgv-direito-small.png');
+
+	@include media('>7col') {
+		background-image: image('logo-fgv-direito.png');
+	}
 }
+
 
 .contentinfo__sagui a {
 	min-height: 40px;
-	background-image: url('/dist/img/logo-sagui-grey.png');
-	background-position: right center;
+	background-image: image('logo-footer-small.png');
+	background-position: center center;
+
+	@include media('>7col') {
+		background-image: image('logo-footer.png');
+		background-position: right;
+	}
+
+	@include media('>4col') {
+		background-image: image('logo-footer-medium.png');
+	}
+
 }
 
