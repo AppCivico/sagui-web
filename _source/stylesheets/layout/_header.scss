@@ -11,9 +11,21 @@
 [role='banner'] {
 	position: absolute;
 	left: 50%;
-	width: span(5);
+	width: span(1.5);
 	margin-top: $line-height * 2em;
-	margin-left: span(5)/-2;
+	margin-left: span(1.5)/-2;
+
+	@include media('>4col') {
+		width: span(3);
+		margin-top: $line-height * 2em;
+		margin-left: span(3)/-2;
+	}
+
+	@include media('>7col') {
+		width: span(5);
+		margin-top: $line-height * 2em;
+		margin-left: span(5)/-2;
+	}
 }
 
 
