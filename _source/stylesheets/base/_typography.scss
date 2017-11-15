@@ -54,7 +54,7 @@ h1 {
 	}
 
 	@include media('>=11col') {
-		font-size: ms(8);
+		font-size: ms(9);
 	}
 }
 
@@ -85,6 +85,10 @@ h4 {
 h5 {
 	font-weight: normal;
 	font-size: ms(2);
+
+	@include media('>=6col') {
+		font-size: ms(3);
+	}
 
 	@include media('>=11col') {
 		font-size: ms(5);
