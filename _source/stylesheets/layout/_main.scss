@@ -8,12 +8,16 @@
  * The `[role='main']` element can be a `main` or an `article`
  */
 
-
 .main-container {
 	position: relative;
 
 	width: 100%;
 	max-width: $max-width;
+
+	margin-right: auto;
+	margin-left: auto;
+
+	box-shadow: 0 0 20px palette('shadow');
 
 	transition: margin-left 0.5s;
 
