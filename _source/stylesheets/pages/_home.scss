@@ -2,34 +2,49 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 .home article {
-
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .content-container {
-	padding-top: $line-height * 4rem;
-	padding-right: gutter();
-	padding-bottom: $line-height * 4rem;
-	padding-left: gutter();
+	padding: $line-height * 1rem;
+	margin-right: auto;
+	margin-left: auto;
 
-	@include media('>=6col') {
-		max-width: 50%;
-
+	@include media('>=4col') {
+		padding-top: $line-height * 2rem;
+		padding-bottom: $line-height * 2rem;
 		margin-left: 0;
 	}
-}
-
-h1 ~ *,
-h2 ~ * {
 	@include media('>=6col') {
-		margin-left: span(0.5 'wide');
+		padding-top: $line-height * 1rem;
+		padding-right: span(1)/ 1em * 1rem;
+		padding-bottom: $line-height * 1rem;
+		padding-left: span(1)/ 1em * 1rem;
+	}
+	@include media('>=8col') {
+		max-width: 50%;
+
+		padding-top: $line-height * 4rem;
+		padding-right: $line-height * 2rem;
+		padding-bottom: $line-height * 4rem;
+		padding-left: $line-height * 2rem;
 	}
 }
+
 
 h1,
 h2 {
 	~ * {
-		@include media('>=6col') {
-			margin-left: span(0.5 'wide');
+		max-width: 30em;
+
+		margin-left: 0;
+
+		@include media('>=4col') {
+			margin-left: $line-height * 2rem;
+		}
+		@include media('>=7col') {
+			margin-left: span(0.3 'wide') / 1em * 1rem;
 		}
 	}
 
@@ -37,59 +52,145 @@ h2 {
 		display: block;
 
 		width: span(1) / 1em * 1rem;
-		height: 9px;    //sass-lint:disable-line property-units
+		height: 8px;    //sass-lint:disable-line property-units
 
-		margin-top: $line-height * 1rem;
-		margin-bottom: $line-height * 1rem;
-		margin-left: span(0.5 'wide') / 1em * 1rem;
+		margin-top: $line-height * 0.5rem;
+		margin-bottom: $line-height * 0.5rem;
+		margin-left: 0;
+
 		background-color: palette('yellow', 'base');
 
 		content: '';
+
+		@include media('>=2col') {
+			margin-top: $line-height * 0.8rem;
+			margin-bottom: $line-height * 0.8rem;
+			margin-left: $line-height * 1rem;
+		}
+		@include media('>=6col') {
+			margin-top: $line-height * 1rem;
+			margin-bottom: $line-height * 1rem;
+			margin-left: $line-height * 2rem;
+		}
+	}
+}
+
+h5 {
+	margin-top: $line-height * -0.5rem;
+	margin-left: $line-height * -1rem;
+
+	@include media('>=2col') {
+		margin-left: 0;
+	}
+	@include media('>=6col') {
+		margin-left: $line-height * 1rem;
 	}
 }
 
 
-
+/* home
+---------------------------------------------------------------------------- */
 
 .greeting {
+	@include aspect-ratio (320 x 180);
+
 	color: palette('white');
 
 	background-image: image('girl-320w.png');
-	background-size: cover;
-	background-color: palette('black');
+	background-position: center top;
+	background-size: 100% auto;
+	background-color: palette('brown', 'dark');
 
 	@include media('>=480px') {
+		@include aspect-ratio (480 x 270);
+
 		background-image: image('girl-480w.png');
 	}
+	@include media('>=640px') {
+		@include aspect-ratio (640 x 500);
 
+		background-image: image('girl-640w.png');
+	}
 	@include media('>=768px') {
+		@include aspect-ratio (768 x 559);
+
 		background-image: image('girl-768w.png');
 	}
-
 	@include media('>=1024px') {
+		@include aspect-ratio (1024 x 620);
+
 		background-image: image('girl-1024w.png');
 	}
-
 	@include media('>=1280px') {
+		@include aspect-ratio (1280 x 744);
+
 		background-image: image('girl-1280w.png');
 	}
-
 	@include media('>=1600px') {
+		@include aspect-ratio (1600 x 930);
+
 		background-image: image('girl-1600w.png');
 	}
-
 	@include media('>=1900px') {
+		@include aspect-ratio (1900 x 1104);
+
 		background-image: image('girl-1900w.png');
 	}
-
 }
 
 
+.greeting .content-container {
+	max-width: 100%;
+	min-width: 50%;
 
-
-.content-greeting {
+	padding-top: span(2) / 1em * 1rem;
+	padding-bottom: 0;
 	margin-right: auto;
+	margin-left: 0;
+
+	@include media('>3col') {
+
+		max-width: 70%;
+		padding-top: span(1.2) / 1em * 1rem;
+		padding-left: $line-height * 3rem;
+		margin-right: auto;
+	}
+
+
+	@include media('>=4col') {
+
+		max-width: 70%;
+		padding-top: span(1.2) / 1em * 1rem;
+		padding-left: $line-height * 3rem;
+		margin-right: auto;
+	}
+	@include media('>=5col') {
+		max-width: 70%;
+
+		padding-top: span(1.5) / 1em * 1rem;
+		padding-left: span(0.8)/ 1em * 1rem;
+		margin-right: auto;
+	}
+	@include media('>=6col') {
+		max-width: 70%;
+
+		padding-top: span(1.5) / 1em * 1rem;
+		padding-left: span(1)/ 1em * 1rem;
+	}
+	@include media('>=8col') {
+		max-width: 50%;
+
+		padding-top: span(2) / 1em * 1rem;
+		padding-left: span(1)/ 1em * 1rem;
+	}
 }
+
+
+
+
+
+/* project
+---------------------------------------------------------------------------- */
 
 .project {
 	color: palette('gray', 'base');
@@ -105,40 +206,39 @@ h2 {
 	background-color: palette('white');
 }
 
+
+/* solution
+---------------------------------------------------------------------------- */
+
 .solution {
 	color: palette('white');
 
 	background-image: image('solution-320w.png');
 	background-size: cover;
-
 	background-color: palette('black');
 
 	@include media('>=480px') {
 		background-image: image('solution-480w.png');
 	}
-
 	@include media('>=768px') {
 		background-image: image('solution-768w.png');
 	}
-
 	@include media('>=1024px') {
 		background-image: image('solution-1024w.png');
 	}
-
 	@include media('>=1280px') {
 		background-image: image('solution-1280w.png');
 	}
-
 	@include media('>=1600px') {
 		background-image: image('solution-1600w.png');
 	}
-
 	@include media('>=1900px') {
 		background-image: image('solution-1900w.png');
 	}
-
 }
 
+/* about
+---------------------------------------------------------------------------- */
 
 .about {
 	color: palette('gray', 'base');
@@ -150,11 +250,8 @@ h2 {
 
 
 .about h2 {
-
 	&::after {
 		background-color: palette('white');
-
-
 	}
 }
 
@@ -162,6 +259,10 @@ h2 {
 	margin-right: 0;
 	margin-left: auto;
 }
+
+
+/* contact
+---------------------------------------------------------------------------- */
 
 .contact {
 	color: palette('gray', 'base');
@@ -171,8 +272,10 @@ h2 {
 }
 
 .contact .content-container {
-	max-width: 70%;
-
 	margin-right: auto;
 	margin-left: auto;
+
+	@include media('>=8col') {
+		max-width: 70%;
+	}
 }
