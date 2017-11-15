@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .site-footer {
-	padding: (gutter(1) / 1em * 1rem) 0;
+	padding: $line-height * 1em;
 
 	text-transform: lowercase;
 	color: palette('gray', 'light');
@@ -107,4 +107,3 @@
 	}
 
 }
-
