@@ -11,23 +11,22 @@
 [role='banner'] {
 	position: absolute;
 	left: 50%;
+
+	z-index: layer('default');
+
 	width: span(1.5);
 	margin-top: $line-height * 2em;
 	margin-left: span(1.5)/-2;
 
-	@include media('>4col') {
+	@include media ('>3col') {
 		width: span(3);
-		margin-top: $line-height * 2em;
 		margin-left: span(3)/-2;
 	}
-
-	@include media('>7col') {
-		width: span(5);
-		margin-top: $line-height * 2em;
-		margin-left: span(5)/-2;
+	@include media ('>=6col') {
+		width: span(4);
+		margin-left: span(4)/-2;
 	}
 }
-
 
 [role='banner'] > a {
 	@include image-replacement;
@@ -42,11 +41,10 @@
 	background-image: image('logo-small.png');
 	background-position: center;
 
-	@include media('>=4col') {
+	@include media ('>=3col') {
 		background-image: image('logo-medium.png');
 	}
-
-	@include media('>=7col') {
+	@include media ('>=4col') {
 		background-image: image('logo.png');
 	}
 }
