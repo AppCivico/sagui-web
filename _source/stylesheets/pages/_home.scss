@@ -45,14 +45,17 @@ h1,
 h2 {
 	~ * {
 		max-width: 30em;
-
 		margin-left: 0;
 
+		@include media('>=2col') {
+			margin-left: $line-height * 0.5rem;
+		}
+
 		@include media('>=4col') {
-			margin-left: $line-height * 2rem;
+			margin-left: $line-height * 1rem;
 		}
 		@include media('>=7col') {
-			margin-left: span(0.3 'wide') / 1em * 1rem;
+			margin-left: $line-height * 2rem;
 		}
 	}
 
@@ -73,13 +76,21 @@ h2 {
 		@include media('>=2col') {
 			margin-top: $line-height * 0.8rem;
 			margin-bottom: $line-height * 0.8rem;
+			margin-left: $line-height * 0.5rem;
+		}
+
+		@include media('>=4col') {
+			margin-top: $line-height * 1rem;
+			margin-bottom: $line-height * 1rem;
 			margin-left: $line-height * 1rem;
 		}
-		@include media('>=6col') {
+
+		@include media('>=7col') {
 			margin-top: $line-height * 1rem;
 			margin-bottom: $line-height * 1rem;
 			margin-left: $line-height * 2rem;
 		}
+
 	}
 }
 
@@ -90,7 +101,7 @@ h5 {
 	@include media('>=2col') {
 		margin-left: 0;
 	}
-	@include media('>=6col') {
+	@include media('>=5col') {
 		margin-left: $line-height * 1rem;
 	}
 }
@@ -358,22 +369,34 @@ h5 {
 ---------------------------------------------------------------------------- */
 
 .contact {
+	padding: 0;
 	color: palette('gray', 'base');
-
 	background-image: image('logo.png');
 	background-color: palette('white');
 }
 
 .contact .content-container {
-
-	max-width: span(6);
+	padding-right: $line-height * 1rem;
+	padding-left: $line-height * 1rem;
 	margin-right: auto;
 	margin-left: auto;
+
+	@include media('>=6col') {
+		max-width: span(6);
+		padding-right: span(1)/ 1em * 1rem;
+		padding-left: span(1)/ 1em * 1rem;
+
+	}
+
+
 }
 
 .contact p {
-	max-width: 38em;
+	max-width: 50em;
 
+	@include media('>=6col') {
+		max-width: 38em;
+	}
 
 }
 
