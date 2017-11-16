@@ -7,28 +7,36 @@
 }
 
 .content-container {
-	padding: $line-height * 1rem;
-	margin-right: auto;
-	margin-left: auto;
+	padding-top: $line-height * 1rem;
+	padding-right: $line-height * 1.5rem;
+	padding-bottom: $line-height * 1rem;
+	padding-left: $line-height * 1.5rem;
 
 	@include media('>=4col') {
-		padding-top: $line-height * 2rem;
-		padding-bottom: $line-height * 2rem;
-		margin-left: 0;
+		padding-top: $line-height * 1rem;
+		padding-right: $line-height * 2rem;
+		padding-bottom: $line-height * 1rem;
+		padding-left: $line-height * 2rem;
+		margin-left: $line-height * 1rem;
 	}
 	@include media('>=6col') {
-		padding-top: $line-height * 1rem;
-		padding-right: span(1)/ 1em * 1rem;
-		padding-bottom: $line-height * 1rem;
-		padding-left: span(1)/ 1em * 1rem;
+		padding-top: $line-height * 1.5rem;
+		padding-right: span(0.5)/ 1em * 1rem;
+		padding-bottom: $line-height * 1.5rem;
+		padding-left: span(0.5)/ 1em * 1rem;
 	}
 	@include media('>=8col') {
-		max-width: 50%;
+		padding-top: $line-height * 2rem;
+		padding-right: span(0.8)/ 1em * 1rem;
+		padding-bottom: $line-height * 2rem;
+		margin-left: $line-height * 1rem;
+	}
 
-		padding-top: $line-height * 4rem;
-		padding-right: $line-height * 2rem;
-		padding-bottom: $line-height * 4rem;
-		padding-left: $line-height * 2rem;
+	@include media('>=10col') {
+		padding-top: $line-height * 3rem;
+		padding-right: span(1)/ 1em * 1rem;
+		padding-bottom: $line-height * 3rem;
+		margin-left: $line-height * 2rem;
 	}
 }
 
@@ -88,6 +96,7 @@ h5 {
 }
 
 
+
 /* home
 ---------------------------------------------------------------------------- */
 
@@ -140,30 +149,21 @@ h5 {
 
 
 .greeting .content-container {
-	max-width: 100%;
-	min-width: 50%;
-	padding-bottom: 0;
 	margin-right: auto;
 	margin-left: 0;
 
 	@include media('<4col') {
 		clear: left;
+
 		padding-top: $line-height * 1rem;
 		padding-bottom: $line-height * 1rem;
-
 	}
-
-
 	@include media('>=4col') {
-
-		max-width: 70%;
 		padding-top: span(1.2) / 1em * 1rem;
 		padding-left: $line-height * 1.5rem;
 		margin-right: auto;
 	}
 	@include media('>=5col') {
-		max-width: 70%;
-
 		padding-top: span(1.4) / 1em * 1rem;
 		padding-left: $line-height * 2rem;
 		margin-right: auto;
@@ -172,23 +172,23 @@ h5 {
 		padding-top: span(1.5) / 1em * 1rem;
 		padding-left: span(0.5)/ 1em * 1rem;
 	}
-
 	@include media('>=8col') {
-		max-width: 60%;
-
 		padding-top: span(1.9) / 1em * 1rem;
 		padding-left: span(0.9)/ 1em * 1rem;
 	}
-
-
-
 	@include media('>=9col') {
-		max-width: 50%;
 
 		padding-top: span(2) / 1em * 1rem;
 		padding-left: span(1)/ 1em * 1rem;
 	}
+
 }
+
+.greeting h5 {
+	max-width: 19em;
+
+}
+
 
 
 
@@ -196,17 +196,47 @@ h5 {
 ---------------------------------------------------------------------------- */
 
 .project {
+	@include aspect-ratio (480 x 200);
 	color: palette('gray', 'base');
-
 	background-image: image('project-trees.png');
+	background-position: center top;
+	background-size: auto 100%;
 	background-color: palette('white');
+
+	@include media('>=8col') {
+		background-position: left;
+
+		&::before,
+		&::after {
+			content: none;
+		}
+	}
+
+
 }
 
 .project .content-container {
+	clear: left;
 	margin-right: 0;
 	margin-left: auto;
-
 	background-color: palette('white');
+
+
+	@include media('>=8col') {
+		clear: none;
+		max-width: 50%;
+	}
+}
+
+.project h2 {
+	max-width: 10em;
+
+}
+
+.project p {
+	max-width: 48em;
+}
+
 
 [role='project'] a {
 	@include image-replacement;
@@ -238,7 +268,6 @@ h5 {
 
 .solution {
 	color: palette('white');
-
 	background-image: image('solution-320w.png');
 	background-size: cover;
 	background-color: palette('black');
@@ -263,17 +292,32 @@ h5 {
 	}
 }
 
+.solution h2 {
+	max-width: 11em;
+}
+
 /* about
 ---------------------------------------------------------------------------- */
 
 .about {
+	@include aspect-ratio (600 x 160);
 	color: palette('gray', 'base');
-
-	background-image: image('about-sagui.png');
+	background-image: image('about-sagui-small.png');
+	background-position: center $line-height * 1em;
 	background-color: palette('yellow', 'base');
+
+	@include media('>=6col') {
+		@include aspect-ratio (892 x 190);
+		background-image: image('about-sagui-medium.png');
+		background-position: left top;
+	}
+
+	@include media('>=10col') {
+		@include aspect-ratio (892 x 130);
+		background-image: image('about-sagui-big.png');
+		background-position: left top;
+	}
 }
-
-
 
 .about h2 {
 	&::after {
@@ -282,9 +326,32 @@ h5 {
 }
 
 .about .content-container {
+	clear: left;
 	margin-right: 0;
 	margin-left: auto;
+
+	@include media('>=6col') {
+		clear: none;
+		max-width: 60%;
+	}
+	@include media('>=10col') {
+		clear: none;
+		max-width: 55%;
+	}
+
+
+	@include media('>=12col') {
+		max-width: 60%;
+	}
+
+
+
 }
+
+.about p {
+	max-width: 30em;
+}
+
 
 
 /* contact
@@ -298,10 +365,16 @@ h5 {
 }
 
 .contact .content-container {
+
+	max-width: span(6);
 	margin-right: auto;
 	margin-left: auto;
-
-	@include media('>=8col') {
-		max-width: 70%;
-	}
 }
+
+.contact p {
+	max-width: 38em;
+
+
+}
+
+
