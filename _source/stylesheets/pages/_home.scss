@@ -102,7 +102,7 @@ h5 {
 	background-color: palette('brown', 'dark');
 
 	@include media('>=480px') {
-		@include aspect-ratio (480 x 270);
+		@include aspect-ratio (480 x 279);
 
 		background-image: image('girl-480w.png');
 	}
@@ -112,12 +112,12 @@ h5 {
 		background-image: image('girl-640w.png');
 	}
 	@include media('>=768px') {
-		@include aspect-ratio (768 x 559);
+		@include aspect-ratio (768 x 465);
 
 		background-image: image('girl-768w.png');
 	}
 	@include media('>=1024px') {
-		@include aspect-ratio (1024 x 620);
+		@include aspect-ratio (1024 x 590);
 
 		background-image: image('girl-1024w.png');
 	}
@@ -142,18 +142,15 @@ h5 {
 .greeting .content-container {
 	max-width: 100%;
 	min-width: 50%;
-
-	padding-top: span(2) / 1em * 1rem;
 	padding-bottom: 0;
 	margin-right: auto;
 	margin-left: 0;
 
-	@include media('>3col') {
+	@include media('<4col') {
+		clear: left;
+		padding-top: $line-height * 1rem;
+		padding-bottom: $line-height * 1rem;
 
-		max-width: 70%;
-		padding-top: span(1.2) / 1em * 1rem;
-		padding-left: $line-height * 3rem;
-		margin-right: auto;
 	}
 
 
@@ -161,31 +158,37 @@ h5 {
 
 		max-width: 70%;
 		padding-top: span(1.2) / 1em * 1rem;
-		padding-left: $line-height * 3rem;
+		padding-left: $line-height * 1.5rem;
 		margin-right: auto;
 	}
 	@include media('>=5col') {
 		max-width: 70%;
 
-		padding-top: span(1.5) / 1em * 1rem;
-		padding-left: span(0.8)/ 1em * 1rem;
+		padding-top: span(1.4) / 1em * 1rem;
+		padding-left: $line-height * 2rem;
 		margin-right: auto;
 	}
 	@include media('>=6col') {
-		max-width: 70%;
-
 		padding-top: span(1.5) / 1em * 1rem;
-		padding-left: span(1)/ 1em * 1rem;
+		padding-left: span(0.5)/ 1em * 1rem;
 	}
+
 	@include media('>=8col') {
+		max-width: 60%;
+
+		padding-top: span(1.9) / 1em * 1rem;
+		padding-left: span(0.9)/ 1em * 1rem;
+	}
+
+
+
+	@include media('>=9col') {
 		max-width: 50%;
 
 		padding-top: span(2) / 1em * 1rem;
 		padding-left: span(1)/ 1em * 1rem;
 	}
 }
-
-
 
 
 
@@ -205,6 +208,7 @@ h5 {
 
 	background-color: palette('white');
 }
+
 
 
 /* solution
