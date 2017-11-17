@@ -31,7 +31,6 @@
 		padding-bottom: $line-height * 2rem;
 		margin-left: $line-height * 1rem;
 	}
-
 	@include media('>=10col') {
 		padding-top: $line-height * 3rem;
 		padding-right: span(1)/ 1em * 1rem;
@@ -40,17 +39,16 @@
 	}
 }
 
-
 h1,
 h2 {
 	~ * {
 		max-width: 30em;
+
 		margin-left: 0;
 
 		@include media('>=2col') {
 			margin-left: $line-height * 0.5rem;
 		}
-
 		@include media('>=4col') {
 			margin-left: $line-height * 1rem;
 		}
@@ -78,19 +76,16 @@ h2 {
 			margin-bottom: $line-height * 0.8rem;
 			margin-left: $line-height * 0.5rem;
 		}
-
 		@include media('>=4col') {
 			margin-top: $line-height * 1rem;
 			margin-bottom: $line-height * 1rem;
 			margin-left: $line-height * 1rem;
 		}
-
 		@include media('>=7col') {
 			margin-top: $line-height * 1rem;
 			margin-bottom: $line-height * 1rem;
 			margin-left: $line-height * 2rem;
 		}
-
 	}
 }
 
@@ -107,10 +102,8 @@ h5 {
 }
 
 
-
 /* home
 ---------------------------------------------------------------------------- */
-
 .greeting {
 	@include aspect-ratio (320 x 180);
 
@@ -188,27 +181,23 @@ h5 {
 		padding-left: span(0.9)/ 1em * 1rem;
 	}
 	@include media('>=9col') {
-
 		padding-top: span(2) / 1em * 1rem;
 		padding-left: span(1)/ 1em * 1rem;
 	}
-
 }
 
 .greeting h5 {
 	max-width: 19em;
-
 }
-
-
 
 
 /* project
 ---------------------------------------------------------------------------- */
-
 .project {
 	@include aspect-ratio (480 x 200);
+
 	color: palette('gray', 'base');
+
 	background-image: image('project-trees.png');
 	background-position: center top;
 	background-size: auto 100%;
@@ -222,26 +211,25 @@ h5 {
 			content: none;
 		}
 	}
-
-
 }
 
 .project .content-container {
 	clear: left;
+
 	margin-right: 0;
 	margin-left: auto;
-	background-color: palette('white');
 
+	background-color: palette('white');
 
 	@include media('>=8col') {
 		clear: none;
+
 		max-width: 50%;
 	}
 }
 
 .project h2 {
 	max-width: 10em;
-
 }
 
 .project p {
@@ -251,6 +239,7 @@ h5 {
 
 [role='project'] a {
 	@include image-replacement;
+
 	display: block;
 
 	width: 100%;
@@ -259,26 +248,26 @@ h5 {
 	margin-top: $line-height * 1em;
 
 	background-position: center center;
-
-
 }
 
 
 .google__button a {
 	@include image-replacement;
-	display: block;
-	min-height: 52px;
-	background-image: image('googleplay.png');
 
+	display: block;
+
+	min-height: 52px;
+
+	background-image: image('googleplay.png');
 }
 
 
 
 /* solution
 ---------------------------------------------------------------------------- */
-
 .solution {
 	color: palette('white');
+
 	background-image: image('solution-320w.png');
 	background-size: cover;
 	background-color: palette('black');
@@ -309,22 +298,24 @@ h5 {
 
 /* about
 ---------------------------------------------------------------------------- */
-
 .about {
 	@include aspect-ratio (600 x 160);
+
 	color: palette('gray', 'base');
+
 	background-image: image('about-sagui-small.png');
 	background-position: center $line-height * 1em;
 	background-color: palette('yellow', 'base');
 
 	@include media('>=6col') {
 		@include aspect-ratio (892 x 190);
+
 		background-image: image('about-sagui-medium.png');
 		background-position: left top;
 	}
-
 	@include media('>=10col') {
 		@include aspect-ratio (892 x 130);
+
 		background-image: image('about-sagui-big.png');
 		background-position: left top;
 	}
@@ -338,25 +329,23 @@ h5 {
 
 .about .content-container {
 	clear: left;
+
 	margin-right: 0;
 	margin-left: auto;
 
 	@include media('>=6col') {
 		clear: none;
+
 		max-width: 60%;
 	}
 	@include media('>=10col') {
 		clear: none;
+
 		max-width: 55%;
 	}
-
-
 	@include media('>=12col') {
 		max-width: 60%;
 	}
-
-
-
 }
 
 .about p {
@@ -364,13 +353,13 @@ h5 {
 }
 
 
-
 /* contact
 ---------------------------------------------------------------------------- */
-
 .contact {
 	padding: 0;
+
 	color: palette('gray', 'base');
+
 	background-image: image('logo.png');
 	background-color: palette('white');
 }
@@ -383,12 +372,10 @@ h5 {
 
 	@include media('>=6col') {
 		max-width: span(6);
+
 		padding-right: span(1)/ 1em * 1rem;
 		padding-left: span(1)/ 1em * 1rem;
-
 	}
-
-
 }
 
 .contact p {
@@ -397,7 +384,4 @@ h5 {
 	@include media('>=6col') {
 		max-width: 38em;
 	}
-
 }
-
-

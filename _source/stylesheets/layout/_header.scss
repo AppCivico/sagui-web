@@ -15,15 +15,18 @@
 	z-index: layer('default');
 
 	width: span(1.5);
+
 	margin-top: $line-height * 2em;
 	margin-left: span(1.5)/-2;
 
 	@include media ('>=3col') {
 		width: span(2.8);
+
 		margin-left: span(2.8)/-2;
 	}
 	@include media ('>=6col') {
 		width: span(4);
+
 		margin-left: span(4)/-2;
 	}
 }

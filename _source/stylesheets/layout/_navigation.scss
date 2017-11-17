@@ -41,13 +41,9 @@ nav a {
 	}
 }
 
-
-
 .current > a {
 	pointer-events: none;
 }
-
-
 
 .main-menu {
 	z-index: layer('default');
@@ -100,9 +96,6 @@ nav a {
 	}
 }
 
-
-
-
 .main-menu > ul > li {
 	float: left;
 
@@ -117,7 +110,6 @@ nav a {
 		margin-left: auto;
 	}
 }
-
 
 .main-menu ul {
 	@include table-layout-wrapper;
@@ -179,17 +171,13 @@ nav a {
 	}
 }
 
-
-
-
 /* footer menu
 ---------------------------------------------------------------------------- */
-
-
 .footer-menu {
 	margin-top: $line-height * 1rem;
 	margin-right: auto;
 	margin-left: auto;
+
 	text-align: center;
 
 	color: palette('gray', 'dark');
@@ -216,7 +204,6 @@ nav a {
 
 
 .footer-menu li {
-
 	@include media('>4col') {
 		@include table-layout-item;
 	}
@@ -232,8 +219,6 @@ nav a {
 		color: palette('yellow', 'base');
 	}
 }
-
-
 
 /* access
 ---------------------------------------------------------------------------- */
