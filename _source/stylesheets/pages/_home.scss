@@ -206,19 +206,15 @@ h5 {
 	@include media('>=480px') {
 		background-image: image('project-trees--480w.jpg');
 	}
-
 	@include media('>=640px') {
 		background-image: image('project-trees--640w.jpg');
 	}
-
 	@include media('>=768px') {
 		background-image: image('project-trees--768w.jpg');
 	}
-
 	@include media('>=1024px') {
 		background-image: image('project-trees--1024w.jpg');
 	}
-
 	@include media('>=8col') {
 		@include table-layout-wrapper;
 
