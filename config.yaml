@@ -18,7 +18,7 @@ menu:
         Pre: ""
         Weight: 1
         Identifier: "home"
-        URL: "#home"
+        URL: "#inicio"
 
       - Name: "O Projeto"
         Pre: ""

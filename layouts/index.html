@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
 	<main role="main" id="conteudo">
-		<article class="greeting">
+		<article class="greeting" id="inicio">
 
 			<div class="content-container">
 				<h1>{{ .Title }}</h1>
@@ -12,7 +12,7 @@
 
 		{{ range where .Site.Pages ".File.TranslationBaseName" "projeto" }}
 
-			<article class="project">
+			<article class="project" id="projeto">
 
 				<div class="content-container">
 					<h2>{{ .Title }}</h2>
@@ -41,7 +41,7 @@
 
 		{{ range where .Site.Pages ".File.TranslationBaseName" "sobre" }}
 
-			<article class="about">
+			<article class="about" id="sobre">
 
 				<div class="content-container">
 				<h2>{{ .Title }}</h2>
@@ -54,7 +54,7 @@
 
 		{{ range where .Site.Pages ".File.TranslationBaseName" "contato" }}
 
-			<article class="contact">
+			<article class="contact" id="contato">
 
 				<div class="content-container">
 				<h2>{{ .Title }}</h2>
