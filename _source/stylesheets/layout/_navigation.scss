@@ -71,13 +71,11 @@ nav a {
 
 			overflow-y: auto;
 
+			color: palette('black');
+
 			box-shadow: inset -7px 1px 50px palette('shadow');
 
 			transition: width 0.5s;
-
-			@include media('<9col') {
-				color: palette('black');
-			}
 		}
 	}
 	@include media('>=9col') {
@@ -115,7 +113,6 @@ nav a {
 	@include table-layout-wrapper;
 }
 
-
 .main-menu li {
 	@include table-layout-item;
 }
@@ -124,13 +121,16 @@ nav a {
 .main-menu a {
 	padding-top: gutter() / 2;
 	padding-bottom: gutter() / 2;
-}
 
-.main-menu a:hover {
-	@include media('<9col') {
-		color: palette('off-white');
+	&:hover {
+		@include media('<9col') {
+			color: palette('off-white');
+
+			background-color: palette('black');
+		}
 	}
 }
+
 
 /* menu controller
 ---------------------------------------------------------------------------- */
