@@ -194,19 +194,52 @@ h5 {
 /* project
 ---------------------------------------------------------------------------- */
 .project {
-	@include aspect-ratio (480 x 200);
+	@include aspect-ratio (959 x 850);
 
 	color: palette('gray', 'base');
 
-	background-image: image('project-trees.png');
+	background-image: image('project-trees--320w.jpg');
 	background-position: center top;
-	background-size: auto 100%;
+	background-size: 100% auto;
 	background-color: palette('white');
 
-	@include media('>=8col') {
-		background-position: left;
+	@include media('>=480px') {
+		background-image: image('project-trees--480w.jpg');
+	}
 
-		&::before,
+	@include media('>=640px') {
+		background-image: image('project-trees--640w.jpg');
+	}
+
+	@include media('>=768px') {
+		background-image: image('project-trees--768w.jpg');
+	}
+
+	@include media('>=1024px') {
+		background-image: image('project-trees--1024w.jpg');
+	}
+
+	@include media('>=8col') {
+		@include table-layout-wrapper;
+
+		background-image: none;
+
+		table-layout: fixed;
+
+		&::before {
+			@include table-layout-item;
+
+			float: none;
+
+			width: 50%;
+
+			padding: 0;
+
+			background-image: image('project-trees--768w.jpg');
+			background-position: 50%;
+			background-size: cover;
+		}
+
 		&::after {
 			content: none;
 		}
@@ -222,9 +255,11 @@ h5 {
 	background-color: palette('white');
 
 	@include media('>=8col') {
+		@include table-layout-item;
+
 		clear: none;
 
-		max-width: 50%;
+		width: auto;
 	}
 }
 
