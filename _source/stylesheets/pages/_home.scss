@@ -102,6 +102,7 @@ h5 {
 }
 
 
+
 /* home
 ---------------------------------------------------------------------------- */
 .greeting {
@@ -292,11 +293,11 @@ h5 {
 	background-image: image('googleplay.png');
 }
 
-
-
 /* solution
 ---------------------------------------------------------------------------- */
 .solution {
+	position: relative;
+
 	color: palette('white');
 
 	background-image: image('solution--320w.jpg');
@@ -312,19 +313,53 @@ h5 {
 	@include media('>=1024px') {
 		background-image: image('solution--1024w.jpg');
 	}
-	@include media('>=1280px') {
-		background-image: image('solution--1280w.jpg');
+
+	&::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		z-index: 1;
+
+		background-color: palette('black', 'overlay');
+
+		content: '';
 	}
-	@include media('>=1600px') {
-		background-image: image('solution--1600w.jpg');
-	}
-	@include media('>=1900px') {
-		background-image: image('solution--1900w.jpg');
-	}
+}
+
+.solution .content-container {
+	position: relative;
+
+	z-index: 1;
 }
 
 .solution h2 {
 	max-width: 11em;
+}
+
+/* video
+---------------------------------------------------------------------------- */
+
+.solution video {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	width: 100%;
+	height: auto;
+	max-width: none;
+	min-width: 100%;
+	min-height: 100%;
+
+	object-fit: cover;
+
+	@include media('<8col') {
+		display: none;
+	}
 }
 
 /* about
@@ -391,7 +426,6 @@ h5 {
 
 	color: palette('gray', 'base');
 
-	background-image: image('logo.png');
 	background-color: palette('white');
 }
 

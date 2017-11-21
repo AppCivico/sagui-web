@@ -52,8 +52,12 @@ h1 {
 	@include media('>=6col') {
 		font-size: ms(6);
 	}
-	@include media('>=11col') {
+	@include media('>=9col') {
 		font-size: ms(9);
+	}
+
+	@include media('>=11col') {
+		font-size: ms(12);
 	}
 }
 
