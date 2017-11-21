@@ -1,6 +1,6 @@
 baseURL:         "http://projetosagui.com.br"
 languageCode:    "pt-br"
-title:           "Projeto Sagui"
+title:           "S.A.G.U.I"
 disableKinds:    ["taxonomy", "taxonomyTerm", "RSS"]
 enableRobotsTXT: true
 googleAnalytics: "UA-109978856-1"
