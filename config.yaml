@@ -3,7 +3,7 @@ languageCode:    "pt-br"
 title:           "Projeto Sagui"
 disableKinds:    ["taxonomy", "taxonomyTerm", "RSS"]
 enableRobotsTXT: true
-googleAnalytics: ""
+googleAnalytics: "UA-109978856-1"
 metaDataFormat:  "yaml"
 enableMissingTranslationPlaceholders: true
 defaultContentLanguage: pt
