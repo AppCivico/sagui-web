@@ -29,12 +29,14 @@
 		{{ range where .Site.Pages ".File.TranslationBaseName" "video" }}
 
 			<article class="solution">
+				<video autoplay autostart loop width="" height="">
+					<source src="/dist/video/video-sagui.mp4" type="video/mp4">
+				</video>
 
 				<div class="content-container">
-				<h2>{{ .Title }}</h2>
-				{{ .Content }}
-				</div>
-
+					<h2>{{ .Title }}</h2>
+					{{ .Content }}
+					</div>
 			</article>
 
 		{{ end }}
