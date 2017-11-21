@@ -41,13 +41,13 @@
 	margin-right: auto;
 	margin-left: auto;
 
-	background-image: image('logo-small.png');
+	background-image: image('logo-200w.png');
 	background-position: center;
 
-	@include media ('>=3col') {
-		background-image: image('logo-medium.png');
-	}
 	@include media ('>=4col') {
-		background-image: image('logo.png');
+		background-image: image('logo-250w.png');
+	}
+	@include media ('>=6col') {
+		background-image: image('logo-350w.png');
 	}
 }

@@ -94,16 +94,16 @@
 
 
 .contentinfo__sagui a {
-	min-height: 40px;
+	min-height: 90px;
 
-	background-image: image('logo-footer-small.png');
+	background-image: image('logo-footer-150w.png');
 	background-position: center center;
 
 	@include media('>7col') {
-		background-image: image('logo-footer.png');
+		background-image: image('logo-footer-215w.png');
 		background-position: right;
 	}
 	@include media('>4col') {
-		background-image: image('logo-footer-medium.png');
+		background-image: image('logo-footer-190w.png');
 	}
 }
