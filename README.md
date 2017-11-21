@@ -1,6 +1,6 @@
 # sagui-web
 
-Site do Projeto Sagui. Desenvolvido pela AppCívico, tem como objetivo construir tecnologias que sejam livres, de impacto positivo e aproximem o cidadão e governos.
+Site do S.A.G.U.I desenvolvido pela AppCívico, tem como objetivo construir tecnologias que sejam livres, de impacto positivo e aproximem o cidadão e governos.
 
 ## Install dependencies
 
