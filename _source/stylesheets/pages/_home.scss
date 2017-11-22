@@ -197,6 +197,8 @@ h5 {
 .project {
 	@include aspect-ratio (959 x 850);
 
+	position: relative;
+
 	color: palette('gray', 'base');
 
 	background-image: image('project-trees--320w.jpg');
@@ -238,7 +240,15 @@ h5 {
 		}
 
 		&::after {
-			content: none;
+			position: absolute;
+			top: 60%;
+			right: 47%;
+
+			z-index: 1;
+
+			margin-right: -X;
+
+			content: image('kids-630w.jpg');
 		}
 	}
 }
@@ -257,6 +267,9 @@ h5 {
 		clear: none;
 
 		width: auto;
+
+		padding-top: $line-height * 4em;
+		padding-bottom: $line-height * 6em;
 	}
 }
 
