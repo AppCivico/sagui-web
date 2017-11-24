@@ -40,6 +40,7 @@ menu:
 
 
 params:
+  SiteDescription: Uma ferramenta para empoderar tecnologicamente populações que sofrem infrações de direitos humanos por consequência direta de grandes empreendimentos.
   Subtitle:      "Seja Ouvido"
   AuthorName:    "AppCívico"
   GitHubUser:    "AppCivico"
