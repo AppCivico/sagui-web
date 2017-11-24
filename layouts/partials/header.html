@@ -18,8 +18,6 @@
 
 	{{ with .Site.Params.SiteDescription }}<meta name="description" content="{{ . }}">{{ end }}
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-
 	{{ if eq (getenv "NODE_ENV") "production" }}
 		{{ template "_internal/google_analytics.html" . }}
 	{{ end }}
