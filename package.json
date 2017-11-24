@@ -4,7 +4,7 @@
   "description": "Site Sagui developed by AppCivico",
   "main": "index.html",
   "scripts": {
-    "autoprefixer": "postcss --use autoprefixer cssnano --safe -r static/dist/css/**/*.css",
+    "autoprefixer": "postcss --use autoprefixer -r static/dist/css/**/*.css",
     "nano": "postcss --use cssnano --safe -r static/dist/css/**/*.css",
     "icons": "imagemin _source/images/**/*.svg --out-dir=static/dist/img",
     "cachebust": "npm-run-all cachebust:img cachebust:cssAndJs",
