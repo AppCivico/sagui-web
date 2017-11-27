@@ -15,26 +15,22 @@
 	@include media('>=4col') {
 		padding-top: $line-height * 1rem;
 		padding-right: $line-height * 2rem;
-		padding-bottom: $line-height * 1rem;
 		padding-left: $line-height * 2rem;
 		margin-left: $line-height * 1rem;
 	}
 	@include media('>=6col') {
-		padding-top: $line-height * 1.5rem;
-		padding-right: span(0.5)/ 1em * 1rem;
-		padding-bottom: $line-height * 1.5rem;
-		padding-left: span(0.5)/ 1em * 1rem;
+		padding-top: $line-height * 1rem;
+		padding-right: $line-height * 1.5rem;
+		margin-left: $line-height * 1.5rem;
 	}
 	@include media('>=8col') {
 		padding-top: $line-height * 2rem;
-		padding-right: span(0.8)/ 1em * 1rem;
-		padding-bottom: $line-height * 2rem;
+		padding-right: $line-height * 2rem;
 		margin-left: $line-height * 1rem;
 	}
 	@include media('>=10col') {
 		padding-top: $line-height * 3rem;
-		padding-right: span(1)/ 1em * 1rem;
-		padding-bottom: $line-height * 3rem;
+		padding-right: $line-height * 3rem;
 		margin-left: $line-height * 2rem;
 	}
 }
@@ -101,7 +97,12 @@ h5 {
 	}
 }
 
-
+p {
+	@include media('<=4col') {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
 
 /* home
 ---------------------------------------------------------------------------- */
@@ -126,27 +127,27 @@ h5 {
 		background-image: image('girl--640w.jpg');
 	}
 	@include media('>=768px') {
-		@include aspect-ratio (768 x 465);
+		@include aspect-ratio (768 x 510);
 
 		background-image: image('girl--768w.jpg');
 	}
 	@include media('>=1024px') {
-		@include aspect-ratio (1024 x 590);
+		@include aspect-ratio (1024 x 585);
 
 		background-image: image('girl--1024w.jpg');
 	}
 	@include media('>=1280px') {
-		@include aspect-ratio (1280 x 744);
+		@include aspect-ratio (1280 x 606);
 
 		background-image: image('girl--1280w.jpg');
 	}
 	@include media('>=1600px') {
-		@include aspect-ratio (1600 x 930);
+		@include aspect-ratio (1600 x 758);
 
 		background-image: image('girl--1600w.jpg');
 	}
 	@include media('>=1900px') {
-		@include aspect-ratio (1900 x 1104);
+		@include aspect-ratio (1900 x 900);
 
 		background-image: image('girl--1900w.jpg');
 	}
@@ -164,25 +165,19 @@ h5 {
 		padding-bottom: $line-height * 1rem;
 	}
 	@include media('>=4col') {
-		padding-top: span(1.2) / 1em * 1rem;
+		padding-top: span(1.3) / 1em * 1rem;
+		padding-bottom: 0;
 		padding-left: $line-height * 1.5rem;
-		margin-right: auto;
 	}
 	@include media('>=5col') {
-		padding-top: span(1.4) / 1em * 1rem;
+		padding-top: span(1.5) / 1em * 1rem;
 		padding-left: $line-height * 2rem;
-		margin-right: auto;
 	}
 	@include media('>=6col') {
-		padding-top: span(1.5) / 1em * 1rem;
+		padding-top: span(1.7) / 1em * 1rem;
 		padding-left: span(0.5)/ 1em * 1rem;
 	}
-	@include media('>=8col') {
-		padding-top: span(1.9) / 1em * 1rem;
-		padding-left: span(0.9)/ 1em * 1rem;
-	}
 	@include media('>=9col') {
-		padding-top: span(2) / 1em * 1rem;
 		padding-left: span(1)/ 1em * 1rem;
 	}
 }
@@ -234,7 +229,7 @@ h5 {
 
 			padding: 0;
 
-			background-image: image('project-trees--768w.jpg');
+			background-image: image('project-trees--800w.jpg');
 			background-position: 50%;
 			background-size: cover;
 		}
@@ -242,16 +237,21 @@ h5 {
 		&::after {
 			position: absolute;
 			top: 60%;
-			right: 47%;
+			right: 50%;
 
 			z-index: 1;
 
-			margin-right: -X;
+			margin-right: span(1) / -2em * 1rem;
 
 			content: image('kids-630w.jpg');
 		}
 	}
+	@include media('>=10col') {
+		background-image: image('project-trees--900w.jpg');
+	}
 }
+
+
 
 .project .content-container {
 	clear: left;

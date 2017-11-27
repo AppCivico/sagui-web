@@ -8,6 +8,10 @@
  *
  * Within any `document` or `application`, the author **SHOULD** mark no more than one element with the `banner` role.
  */
+.site-header {
+	position: relative;
+}
+
 [role='banner'] {
 	position: absolute;
 	left: 50%;
@@ -44,7 +48,7 @@
 	background-image: image('logo-200w.png');
 	background-position: center;
 
-	@include media ('>=4col') {
+	@include media ('>=3col') {
 		background-image: image('logo-250w.png');
 	}
 	@include media ('>=6col') {

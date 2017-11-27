@@ -14,16 +14,24 @@
 	<link rel="stylesheet" href="/dist/css/qa.css" media="all">
 	{{ end }}
 
-	<title>{{ if not .IsHome }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
+	<title>{{ if not .IsHome }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}{{ if .IsHome }} &middot; {{ .Site.Params.subtitle }}{{ end }}</title>
 
-	{{ with .Site.Params.SiteDescription }}<meta name="description" content="{{ . }}">{{ end }}
-
-	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 
 	{{ if eq (getenv "NODE_ENV") "production" }}
 		{{ template "_internal/google_analytics.html" . }}
 	{{ end }}
 
+	{{ template "_internal/opengraph.html" . }}
+
+	{{ template "_internal/schema.html" . }}
+
+	<meta name="application-name" content="{{ .Site.Title }}"/>
+	<meta name="msapplication-square70x70logo" content="small.jpg"/>
+	<meta name="msapplication-square150x150logo" content="medium.jpg"/>
+	<meta name="msapplication-wide310x150logo" content="wide.jpg"/>
+	<meta name="msapplication-square310x310logo" content="large.jpg"/>
+	<meta name="msapplication-TileColor" content="#3f2f27"/>
 </head>
 <body>
 	<input type="checkbox" id="menu-controller" class="menu-controller" hidden>

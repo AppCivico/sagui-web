@@ -40,7 +40,8 @@ menu:
 
 
 params:
-  Subtitle:      "Seja Ouvido"
+  description: Uma ferramenta para empoderar tecnologicamente populações que sofrem infrações de direitos humanos por consequência direta de grandes empreendimentos.
+  subtitle:      "Sistema de Avaliação e Gestão Unificado de Informações"
   AuthorName:    "AppCívico"
   GitHubUser:    "AppCivico"
 
