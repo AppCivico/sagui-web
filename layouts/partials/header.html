@@ -22,6 +22,12 @@
 		{{ template "_internal/google_analytics.html" . }}
 	{{ end }}
 
+	<meta name="application-name" content="{{ .Site.Title }}"/>
+	<meta name="msapplication-square70x70logo" content="small.jpg"/>
+	<meta name="msapplication-square150x150logo" content="medium.jpg"/>
+	<meta name="msapplication-wide310x150logo" content="wide.jpg"/>
+	<meta name="msapplication-square310x310logo" content="large.jpg"/>
+	<meta name="msapplication-TileColor" content="#3f2f27"/>
 </head>
 <body>
 	<input type="checkbox" id="menu-controller" class="menu-controller" hidden>
