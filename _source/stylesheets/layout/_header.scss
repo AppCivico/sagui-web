@@ -8,6 +8,10 @@
  *
  * Within any `document` or `application`, the author **SHOULD** mark no more than one element with the `banner` role.
  */
+.site-header {
+	position: relative;
+}
+
 [role='banner'] {
 	position: absolute;
 	left: 50%;
