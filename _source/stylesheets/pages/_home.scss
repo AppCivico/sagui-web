@@ -49,7 +49,8 @@ h2 {
 			margin-left: $line-height * 1rem;
 		}
 		@include media('>=7col') {
-			margin-left: $line-height * 2rem;
+			margin-left: $line-height * 2em;
+
 		}
 	}
 
@@ -81,8 +82,8 @@ h2 {
 		}
 
 		@include media('>=7col') {
-			margin-top: $line-height * 1rem;
-			margin-bottom: $line-height * 1rem;
+			margin-left: $line-height * 2rem;
+
 		}
 	}
 }
@@ -97,6 +98,11 @@ h5 {
 	@include media('>=5col') {
 		margin-left: $line-height * 1rem;
 	}
+
+	@include media('>=7col') {
+		margin-left: $line-height * 2rem;
+	}
+
 }
 
 p {
