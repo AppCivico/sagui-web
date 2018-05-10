@@ -59,7 +59,7 @@ h2 {
 		width: span(1) / 1em * 1rem;
 		height: 8px;    //sass-lint:disable-line property-units
 
-		margin-top: $line-height * 0.5rem;
+		margin-top: $line-height * 0.8rem;
 		margin-bottom: $line-height * 0.5rem;
 		margin-left: 0;
 
@@ -75,22 +75,24 @@ h2 {
 		@include media('>=4col') {
 			margin-top: $line-height * 1rem;
 			margin-bottom: $line-height * 1rem;
+		}
+		@include media('>=5col') {
 			margin-left: $line-height * 1rem;
 		}
+
 		@include media('>=7col') {
 			margin-top: $line-height * 1rem;
 			margin-bottom: $line-height * 1rem;
-			margin-left: $line-height * 2rem;
 		}
 	}
 }
 
 h5 {
-	margin-top: $line-height * -0.5rem;
-	margin-left: $line-height * -1rem;
+	margin-top: $line-height * 1rem;
 
 	@include media('>=2col') {
-		margin-left: 0;
+		margin-left: $line-height * 0.5rem;
+
 	}
 	@include media('>=5col') {
 		margin-left: $line-height * 1rem;
@@ -147,7 +149,7 @@ p {
 		background-image: image('girl--1600w.jpg');
 	}
 	@include media('>=1900px') {
-		@include aspect-ratio (1900 x 900);
+		@include aspect-ratio (1900 x 1000);
 
 		background-image: image('girl--1900w.jpg');
 	}
@@ -186,6 +188,9 @@ p {
 	max-width: 19em;
 }
 
+.greeting h1 {
+	max-width: 15em;
+}
 
 /* project
 ---------------------------------------------------------------------------- */
